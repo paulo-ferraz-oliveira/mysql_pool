@@ -149,8 +149,8 @@ internal_create_pool(PoolName, Size, ConnectionOptions) ->
         ],
         pooler:new_pool(PoolConfig)
     catch
-        _:Error ->
-            ?ERROR_MSG("creating pool: ~p failed with error: ~p stack: ~p", [PoolName, Error, erlang:get_stacktrace()]),
+        _:Error:Stacktrace ->
+            ?ERROR_MSG("creating pool: ~p failed with error: ~p stack: ~p", [PoolName, Error, Stacktrace]),
             Error
     end.
 
