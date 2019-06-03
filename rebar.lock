@@ -8,7 +8,7 @@
   0},
  {<<"mysql">>,
   {git,"https://github.com/lrascao/mysql-otp",
-       {ref,"50138e598e372b473b99bd7b0f006aadbc9aef05"}},
+       {ref,"2c5fcbc30281653b1604c213622cc014fdaa883e"}},
   0},
  {<<"plists">>,
   {git,"https://github.com/silviucpp/plists.git",
