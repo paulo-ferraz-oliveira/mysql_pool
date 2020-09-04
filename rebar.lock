@@ -17,4 +17,8 @@
  {<<"pooler">>,
   {git,"https://github.com/seth/pooler.git",
        {ref,"a9fb9dbbac45000f10d8edf4464bf8425b39bd77"}},
+  0},
+ {<<"stacktrace_compat">>,
+  {git,"https://github.com/g-andrade/stacktrace_compat.git",
+       {ref,"359c79efebd62a3994ec6b956d2ab9074ec31710"}},
   0}].
