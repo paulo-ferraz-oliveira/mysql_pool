@@ -77,16 +77,12 @@ prepare(PoolName, Stm, Query) ->
     ok | {error, reason()}.
 
 unprepare(PoolName, Stm) ->
-    case mysql_connection_manager:pool_remove_stm(PoolName, Stm) of
-        true ->
-            try
-                mysql_connection_manager:map_connections(PoolName, fun(Pid) -> ok = mysql_connection:unprepare(Pid, Stm) end),
-                ok
-            catch _: Error ->
-                {error, Error}
-            end;
-        Error ->
-            {error, Error}
+    true = mysql_connection_manager:pool_remove_stm(PoolName, Stm),
+    try
+        mysql_connection_manager:map_connections(PoolName, fun(Pid) -> ok = mysql_connection:unprepare(Pid, Stm) end),
+        ok
+    catch _: Error ->
+        {error, Error}
     end.
 
 -spec query(pool_id(), binary()) ->
