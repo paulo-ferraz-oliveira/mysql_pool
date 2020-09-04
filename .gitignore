@@ -3,3 +3,4 @@
 /ebin/
 /log/
 *.iml
+_build/
