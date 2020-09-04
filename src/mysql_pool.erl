@@ -178,7 +178,7 @@ with(PoolName, Fun) when is_function(Fun, 1) ->
 % internals
 
 pooler_transaction(Pool, Fun) ->
-    ProxyPid = pooler:take_member(Pool, 5000),
+    ProxyPid = pooler:take_member(Pool, {5000, ms}),
     try
         proxy_exec(ProxyPid, Fun)
     after
